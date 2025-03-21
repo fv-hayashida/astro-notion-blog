@@ -10,8 +10,9 @@ export interface Props {
 
 const { heading, posts } = Astro.props
 ---
-
+<!-- サイドバー・おすすめ -->
 <div class="blog-posts-link">
+  <!-- <h2>おすすめ記事</h2> -->
   <h2>{heading}</h2>
   {
     posts.length === 0 ? (

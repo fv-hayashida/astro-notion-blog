@@ -25,6 +25,8 @@ import PostRelativeLink from '../../components/PostRelativeLink.astro'
 import BlogPostsLink from '../../components/BlogPostsLink.astro'
 import BlogTagsLink from '../../components/BlogTagsLink.astro'
 import styles from '../../styles/blog.module.css'
+import '/src/styles/slug.css';
+
 
 export async function getStaticPaths() {
   const posts = await getAllPosts()
@@ -105,7 +107,6 @@ if (post.FeaturedImage && post.FeaturedImage.Url) {
       <PostTags post={post} />
       <PostTitle post={post} enableLink={false} />
       <PostBody blocks={blocks} />
-      <PostTags post={post} />
 
       <footer>
         <PostRelativeLink prevPost={prevPost} nextPost={nextPost} />
@@ -125,3 +126,5 @@ if (post.FeaturedImage && post.FeaturedImage.Url) {
     <BlogTagsLink heading="Categories" tags={tags} />
   </div>
 </Layout>
+
+

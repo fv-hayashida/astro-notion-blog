@@ -1,0 +1,13 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "eslint.alwaysShowStatus": true,
+
+  "workbench.colorCustomizations": {
+    "editorUnnecessaryCode.border": "#dd7aab"
+  }
+}
