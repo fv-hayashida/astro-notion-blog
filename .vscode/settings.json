@@ -9,5 +9,8 @@
 
   "workbench.colorCustomizations": {
     "editorUnnecessaryCode.border": "#dd7aab"
+  },
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

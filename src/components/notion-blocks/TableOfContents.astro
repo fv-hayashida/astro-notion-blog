@@ -13,7 +13,7 @@ const { block, headings } = Astro.props;
 ---
 
 <div class="sm:px-10">
-  <div class="table-of-contents">
+  <div class="table-of-contents border-2 border-amber-200 w-full py-3 px-6">
     <div class="ancle-index-title">この記事の目次</div>
 
     {
@@ -30,7 +30,7 @@ const { block, headings } = Astro.props;
         return (
           <a
             href={`#${buildHeadingId(heading)}`}
-            class={`table-of-contents ${snakeToKebab(block.TableOfContents.Color)} ${indentClass}`}
+            class={`  ${snakeToKebab(block.TableOfContents.Color)} ${indentClass}`}
           >
             {heading.RichTexts.map((richText: interfaces.RichText) => richText.PlainText).join('')}
           </a>
@@ -40,13 +40,6 @@ const { block, headings } = Astro.props;
   </div>
 </div>
 <style>
-
-  div.table-of-contents {
-    width: 100%;
-    padding: 2rem 3rem;
-    border: solid 4px;
-    border-color: var(--orange-100);
-  }
 
   .ancle-index-title {
     font-size: 1.6rem;
