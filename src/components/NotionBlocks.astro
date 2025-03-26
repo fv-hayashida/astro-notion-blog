@@ -106,7 +106,6 @@ const bookmarkURLMap = await buildURLToHTMLMap(bookmarkURLs);
 
 {
   blocks.map((block: interfaces.Block) => {
-    console.log('----------------------------');
     switch (block.Type) {
       case 'paragraph':
         return <Paragraph block={block} headings={headings} />;
@@ -128,8 +127,8 @@ const bookmarkURLMap = await buildURLToHTMLMap(bookmarkURLs);
           const combinedText = plainTextArray.join('');
           if (combinedText.includes('rakuten')) {
             return (
-              <div class="p-10 ">
-                <div class="bg-white shadow border border-amber-400" set:html={combinedText} />
+              <div class="px-10 pb-10 affiliate-link">
+                <div class="bg-white shadow border border-amber-400 rounded-sm" set:html={combinedText} />
               </div>
             );
           }
@@ -170,3 +169,4 @@ const bookmarkURLMap = await buildURLToHTMLMap(bookmarkURLs);
     return null;
   })
 }
+

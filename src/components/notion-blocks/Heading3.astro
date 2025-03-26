@@ -45,9 +45,13 @@ const id = buildHeadingId(block.Heading3)
 
 <style>
   h3 {
-    margin: 0.9em 0 0.3em;
+    padding: 0.5rem 1rem;
+    margin: 2rem 0 1.6rem;
     color: var(--fg);
     font-size: 1.4rem;
+    background: #edd;
+    border-radius: 2px; 
+    font-weight:500;
    
   }
   @media (max-width: 640px) {
@@ -56,11 +60,11 @@ const id = buildHeadingId(block.Heading3)
   
     }
   }
-  h3::before {
+  /* h3::before {
     content: '■';
     color: var(--amber-400);
     padding: 0px 0.5rem;
-  }
+  } */
 
   .toggle {
     margin: 1.2rem 0 0;

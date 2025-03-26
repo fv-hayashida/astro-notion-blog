@@ -82,14 +82,14 @@ if (database.Icon && database.Icon.Type === 'file') {
   <body>
     <GoogleAnalytics trackingId={PUBLIC_GA_TRACKING_ID} />
     <div class="">
-      <header class="bg-amber-100 py-2">
+      <header class="bg-[#fc9] py-4">
         <div class="container mx-auto">
           <h1>
             <a href={getNavLink('/')}>
               <!-- { <span>{database.Icon.Emoji}</span> } -->
               <!-- { <img src={database.Icon.Url} alt="Site icon image" /> } -->
               <!-- <img src={customIconURL} class="custom-icon" alt="Site icon image" /> -->
-              <span class="text-amber-600">{database.Title}</span>
+              <span class="text-[#633] text-4xl font-bold">{database.Title}</span>
             </a>
           </h1>
           <div class="description">
@@ -98,9 +98,8 @@ if (database.Icon && database.Icon.Type === 'file') {
         </div>
       </header>
 
-      <div class="container mx-auto py-6 flex">
-        <main class="flex justify-between w-full px-6 sm:px-0">
-          <div class="content w-full">
+      <div class="container mx-auto py-6 gap-x-6 flex">
+        <main class="shadow w-full px-6 sm:p-8 ">
             <slot name="main" />
 
             <footer>
@@ -109,10 +108,9 @@ if (database.Icon && database.Icon.Type === 'file') {
                 <a href="https://github.com/otoyo/astro-notion-blog">astro-notion-blog</a>
               </div>
             </footer>
-          </div>
         </main>
 
-        <aside class="w-[400px] px-6 py-4 bg-white shadow h-fit hidden lg:block">
+        <aside class="w-[360px] px-6 py-4 bg-white shadow h-fit hidden lg:block">
           <SearchButton />
           <slot name="aside" />
         </aside>
@@ -125,31 +123,7 @@ if (database.Icon && database.Icon.Type === 'file') {
 </html>
 
 <style>
-  div.cover img {
-    display: block;
-    width: 100%;
-    height: 20vh;
-    object-fit: cover;
-    object-position: center 60%;
-  }
-
-  main footer {
-    margin: 30px 0 10px;
-    text-align: center;
-    font-size: 0.75rem;
-  }
-  @media (max-width: 640px) {
-    main footer {
-      margin: 0 auto 30px;
-    }
-  }
-  main footer span {
-    color: #777;
-  }
-  main footer a {
-    color: inherit;
-    text-decoration: underline;
-  }
+ 
 </style>
 
 <style is:global>
@@ -159,8 +133,9 @@ if (database.Icon && database.Icon.Type === 'file') {
     --gap: 1rem;
     --gap-double: 2rem;
 
-    --bg: #fff;
-    --fg: #333;
+    --bg: #edc;
+    --fg: #5a3a3a;    /* font */
+    --card-bg: #fffefe;
 
     --orange-100: #ffedd5;
     --amber-100: #fef3c7;
@@ -198,8 +173,8 @@ if (database.Icon && database.Icon.Type === 'file') {
 
   body {
     min-height: 100vh;
-    /* background: var(--bg); */
-    /* color: var(--fg); */
+    background: var(--bg);
+    color: var(--fg);
     font-family:
       ui-sans-serif,
       -apple-system,
@@ -232,6 +207,35 @@ if (database.Icon && database.Icon.Type === 'file') {
     -webkit-text-size-adjust: 100%;
   }
 
+  div.cover img {
+    display: block;
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
+    object-position: center 60%;
+  }
+
+  main{
+    background: var(--card-bg);
+  }
+  main footer {
+    margin: 30px 0 10px;
+    text-align: center;
+    font-size: 0.75rem;
+  }
+  @media (max-width: 640px) {
+    main footer {
+      margin: 0 auto 30px;
+    }
+  }
+  main footer span {
+    color: #777;
+  }
+  main footer a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
   figure {
     margin: 0;
     font-size: 0.85rem;
@@ -253,18 +257,7 @@ if (database.Icon && database.Icon.Type === 'file') {
     background: rgba(247, 212, 255, 0.8);
   }
 
-  h1 {
-    margin: 0;
-    color: var(--fg);
-    font-size: 2rem;
-    font-weight: 700;
-  }
 
-  @media (max-width: 640px) {
-    h1 {
-      font-size: 1.6rem;
-    }
-  }
 
   ol {
     color: #222;
